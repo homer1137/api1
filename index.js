@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const playerData = require('./manutd.json')
 
@@ -8,7 +9,7 @@ app.get('/', (req, res) => {
     res.send("Manchester United Players")
 })
 
-app.get('/players', (req, res) => {
+app.get('/players', cors(), (req, res) => {
     res.send(playerData)
 })
 
